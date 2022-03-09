@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Exiled.API.Features;
 using Exiled.CustomRoles.API;
 
@@ -6,6 +6,7 @@ namespace SCP_999
 {
     public class Plugin : Plugin<Config>
     {
+        public static Plugin Singleton;
         public override string Name { get; } = "Scp999";
         public override string Prefix { get; } = "scp_999";
         public override string Author { get; } = "ErrorSaid";
@@ -16,12 +17,15 @@ namespace SCP_999
 
         public override void OnEnabled()
         {
-            base.OnEnabled();
+            Singleton = this;
 
             SCP999();
+
+            base.OnEnabled();
         }
         public override void OnDisabled()
         {
+            Singleton = null;
 
             base.OnDisabled();
         }
