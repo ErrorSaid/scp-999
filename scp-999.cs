@@ -13,7 +13,7 @@ namespace SCP_999
     [CustomRole(RoleType.Tutorial)]
     public class Scp999 : CustomRole
     {
-        public override uint Id { get; set; } = 268;
+        public override uint Id { get; set; } = 100;
         public override string Name { get; set; } = "SCP999";
         public override string Description { get; set; } = "SCP 999";
         public override RoleType Role { get; set; } = RoleType.Tutorial;
