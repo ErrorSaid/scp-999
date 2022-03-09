@@ -1,4 +1,4 @@
-﻿using Exiled.API.Features;
+using Exiled.API.Features;
 using Exiled.API.Features.Spawn;
 using Exiled.CustomRoles.API.Features;
 using System.Collections.Generic;
@@ -6,28 +6,29 @@ using Exiled.Events.EventArgs;
 using UnityEngine;
 using Scp999Handler_Player = Exiled.Events.Handlers.Player;
 using Exiled.API.Features.Attributes;
+using Exiled.CustomItems.API;
 
 namespace SCP_999
 {
     [CustomRole(RoleType.Tutorial)]
     public class Scp999 : CustomRole
     {
-        public override uint Id { get; set; } = 36;
-        public override string Name { get; set; } = "SCP 999";
+        public override uint Id { get; set; } = 268;
+        public override string Name { get; set; } = "SCP999";
         public override string Description { get; set; } = "SCP 999";
         public override RoleType Role { get; set; } = RoleType.Tutorial;
         public override int MaxHealth { get; set; } = 5000;
-        public override string CustomInfo { get; set; } = "";
+        public override string CustomInfo { get; set; } = "SCP-999 cute xd";
 
         public override SpawnProperties SpawnProperties { get; set; } = new SpawnProperties
         {
             Limit = 1,
-            RoleSpawnPoints = new List<RoleSpawnPoint>
+            DynamicSpawnPoints = new List<DynamicSpawnPoint>
             {
-                new RoleSpawnPoint
+                new DynamicSpawnPoint
                 {
-                    Chance = 100,
-                    Role = RoleType.Scp096,
+                    Chance = Plugin.Singleton.Config.Chance,
+                    Location = SpawnLocation.Inside914,
                 }
             }
         };
