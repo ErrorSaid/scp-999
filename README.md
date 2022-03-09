@@ -1,5 +1,5 @@
 # Description
-This is a plugin that has a new role and it is scp 999
+This plugin adds a new role which is scp-999 and its size is 0.4 0.4 0.4
 
 ## Default Config
 ```yml
