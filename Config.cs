@@ -1,4 +1,4 @@
-﻿using System.ComponentModel;
+using System.ComponentModel;
 using Exiled.API.Interfaces;
 
 namespace SCP_999
@@ -7,5 +7,7 @@ namespace SCP_999
     {
         [Description("is the plugin enabled?")]
         public bool IsEnabled { get; set; } = true;
+        [Description("Chance to spawn object to transform scp-999")]
+        public int Chance { get; set; } = 50; 
     }
 }
